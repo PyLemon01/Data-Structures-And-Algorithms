@@ -1,0 +1,15 @@
+Jet,Black,Yes,No,No
+Chewie,Grey,No,Yes,No
+Nymph,Brown,No,No,Yes
+Copper,Brown,Yes,Yes,No
+Seti,White,Yes,No,Yes
+Epie,Black,No,Yes,Yes
+Silk,Yellow,No,Yes,No
+Menth,Green,No,No,Yes
+Thet,Black,Yes,Yes,Yes
+Vaze,White,Yes,Yes,No
+Lithe,Grey,Yes,Yes,No
+Benny,Grey,Yes,Yes,No
+Meryl,Yellow,No,No,Yes
+Cookie,Brown,Yes,No,No
+Robin,Red,Yes,No,Yes

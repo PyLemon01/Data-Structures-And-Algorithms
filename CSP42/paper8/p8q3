@@ -1,0 +1,60 @@
+#DECLARE LinkedList:ARRAY[0:8] OF INTEGER
+#DECLARE StartLinkedList , StartEmptyList: INTEGER
+LinkedList = [ ]
+LinkedList.append([9512 , 5])
+LinkedList.append([5541 , 3])
+LinkedList.append([1999 , 0])
+LinkedList.append([6651 , -1])
+LinkedList.append([-1 , 6])
+LinkedList.append([5612 , 1])
+LinkedList.append([-1 , -1])
+LinkedList.append([-1 , 4])
+StartLinkedList = 2
+StartEmptyList = 7
+
+def PrintListItems(LinkedList):
+    CurrentPointer = StartLinkedList
+    while LinkedList[CurrentPointer][0] != -1:
+        print (LinkedList[CurrentPointer][0])
+        CurrentPointer = LinkedList[CurrentPointer][1]
+
+def PrintEmptyList(LinkedList):
+    CurrentEmptyPointer = StartEmptyList
+    print(CurrentEmptyPointer)
+    while CurrentEmptyPointer >= 0 and LinkedList[CurrentEmptyPointer][1] != -1:
+        print(LinkedList[CurrentEmptyPointer][1])
+        CurrentEmptyPointer = LinkedList[CurrentEmptyPointer][1]
+
+print("Linked list" )
+print( PrintListItems(LinkedList) )
+print("Empty list" )
+print( PrintEmptyList(LinkedList) )
+
+
+def AddItem(myint):
+    global StartEmptyList
+    global StartLinkedList
+    global LinkedList
+
+    if StartEmptyList == -1:
+        print("List is full")
+    else:
+        freepointer = StartEmptyList
+        StartEmptyList = LinkedList[StartEmptyList][1]
+        LinkedList[freepointer][0] = myint
+        LinkedList[freepointer][1] = -1
+        CurrentPointer = StartLinkedList
+        while LinkedList[CurrentPointer][1] != -1:
+            CurrentPointer = LinkedList[CurrentPointer][1]
+        
+        
+        
+        LinkedList[CurrentPointer][1] = freepointer
+
+
+PrintListItems(LinkedList)
+AddItem(8)
+print("Updated EmptyList")
+
+PrintEmptyList(LinkedList)
+
